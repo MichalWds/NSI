@@ -3,3 +3,6 @@
  * Authors :
    - Karol Kuchnio (`s21912@pjwstk.edu.pl`)
    - Michał Wadas (`s20495@pjwstk.edu.pl`)
+
+#  GAME RULES
+https://pl.frwiki.wiki/wiki/Awal%C3%A9

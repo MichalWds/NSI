@@ -1,6 +1,7 @@
 
 ##Authors: Karol Kuchnio s21912 and Michał Wadas s20495
 class PlayerData:
+    """Player data class with necessary properties to initialize"""
     def __init__(self, current_player, min_position,max_position,
                  min_pick,max_pick,player,score, isstarved, camp, ask_move):
         self.current_player = current_player
