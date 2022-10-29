@@ -6,7 +6,7 @@ import skfuzzy as fuzz
 from skfuzzy import control as ctrl
 
 # Antecednets (Inputs):
-height = ctrl.Antecedent(np.arange(0, 201, 1), 'height')
+height = ctrl.Antecedent(np.arange(150, 201, 1), 'height')
 appearance = ctrl.Antecedent(np.arange(0, 11, 1), 'appearance')
 iq = ctrl.Antecedent(np.arange(100, 201, 1), 'iq')
 
