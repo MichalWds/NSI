@@ -105,10 +105,10 @@ if __name__ == '__main__':
     temp = get_avg_duplicates(temp)
     temp.sort(key=lambda x: x[1])
 
-    print("Recomended movie for for you:")
+    print("Recommended movie for for you:")
     for i in temp[-5:]:
         print(i[0])
     print("\n")
-    print("I would rather not recommend theose ones:")
+    print("I would rather not recommend those ones:")
     for i in temp[:5]:
         print(i[0])
