@@ -15,3 +15,7 @@
 
   _example:_ 
  `python3 main.py -u "Michał Wadas" -sc 'Pearson'`
+
+
+
+ # Screenshorts from running program can be found here: movie_recommender_app/screenshots
