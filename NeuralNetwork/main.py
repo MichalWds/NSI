@@ -11,23 +11,20 @@ import seaborn as sns
 """
 print("* Wine quality *")
 wineQuality_data = pd.read_csv('winequality-white.csv', sep=';',
-                               names=['fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides',
+                               names=['fixed acidity', 'volatile acidity', 'citric acid', 'chlorides',
                                       'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates',
                                       'alcohol', 'quality'])
 
-wineQuality_train_data = wineQuality_data.copy()
 wineQuality_train_label = wineQuality_data.pop('quality')
-wineQuality_train_data = np.asarray(wineQuality_train_data).astype('float32')
+wineQuality_train_data = wineQuality_data
 
-normalize = tf.keras.layers.Normalization()
-normalize.adapt(wineQuality_train_data)
-wineQuality_model = tf.keras.Sequential([normalize, tf.keras.layers.Dense(128, activation='relu'),
+wineQuality_model = tf.keras.Sequential([tf.keras.layers.Dense(128, activation='sigmoid'),
                                          tf.keras.layers.Dense(64, activation='relu'),
-                                         tf.keras.layers.Dense(41, activation='softmax')
+                                         tf.keras.layers.Dense(10, activation='sigmoid')
                                          ])
 
 wineQuality_model.compile(optimizer='adam',
-                          loss='mean_squared_error',
+                          loss='sparse_categorical_crossentropy',
                           metrics=['accuracy']
                           )
 print(wineQuality_train_data)
@@ -230,7 +227,7 @@ haberman_model.compile(optimizer='adam',
                        loss='mean_squared_error',
                        metrics=['accuracy']
                        )
-haberman_model.fit(haberman_train_data, haberman_train_label, epochs=13)
+haberman_model.fit(haberman_train_data, haberman_train_label, epochs=10)
 
 """
     * Breast Cancer (Haberman) * END
